@@ -1,0 +1,38 @@
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+html,
+body {
+  min-height: 100%;
+  font-size: 17px;
+}
+body {
+  margin: 0;
+  background: #aaa;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.3rem;
+  color: $text-color;
+}
+
+a,
+a:hover,
+a:active,
+a:visited,
+a:target {
+  color: $link-color;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+ul,
+ol,
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}

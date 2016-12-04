@@ -1,0 +1,167 @@
+.page-wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.cards-container {
+  flex: 1;
+  padding: 15px;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  width: 400px;
+  margin: 15px;
+  padding: 143px 30px 18px 30px;
+  background-size: 100% 182px;
+  background-repeat: no-repeat;
+  background-color: #fff;
+  border-radius: $border-radius;
+  p {
+    font-size: .8rem;
+    line-height: 1.2rem;
+    margin-bottom: .6rem;
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  &__logo-row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__initials {
+    width: 75px;
+    height: 75px;
+    line-height: 68px;
+    background-color: $sky-blue;
+    font-size: 1.8rem;
+    color: #fff;
+    border: 4px solid #fff;
+    border-radius: $border-radius;
+    text-align: center;
+  }
+  &__follow {
+    align-self: flex-end;
+  }
+  &__follow--button {
+    padding: 3px 22px;
+    border: 2px solid $link-color;
+    border-radius: $border-radius;
+    background: #fff;
+    font-size: 0.9rem;
+    color: $link-color;
+    cursor: pointer;
+    &:focus {
+      outline: 0;
+    }
+  }
+  &__title {
+    margin-top: 1.1rem;
+    margin-bottom: .6rem;
+    font-size: 1.3rem;
+    font-weight: normal;
+  }
+  &__url a {
+    color: $text-color;
+  }
+}
+
+.notifications-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 40%;
+  margin-right: 0;
+  padding: 30px;
+  background: #eee;
+  color: #fff;
+  box-shadow: 0 0 6px rgba(0, 0, 0, .3);
+  transition: right .5s ease-in-out;
+  &--off {
+    right: -40%;
+  }
+  &--heading {
+    color: $text-color;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    font-weight: normal;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+  }
+  &__close {
+    float: right;
+    cursor: pointer;
+  }
+}
+
+.subscription {
+  color: #555;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: .8rem;
+  &:last-child {
+    border: 0;
+  }
+  h4 {
+    padding-top: 30px;
+    font-weight: normal;
+    font-size: 1.3rem;
+    color: #000;
+  }
+  &:first-child h4 {
+    margin-top: 0;
+  }
+  &__list {
+    clear: both;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  &__logo {
+    @extend .card__initials;
+    float: left;
+    width: 55px;
+    height: 55px;
+    border-width: 3px;
+    line-height: 53px;
+    font-size: 1.4rem;
+    margin: .8rem .7rem .8rem 0;
+
+  }
+  &__notification {
+    margin-bottom: .5rem;
+  }
+  &__date {
+    color: #aaa;
+    font-size: .8rem;
+    font-style: italic;
+  }
+  &__no-posts {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .page-wrapper {
+    flex-direction: column;
+  }
+  .notifications-container {
+    width: 100%;
+    &--off {
+      right: -100%;
+    }
+  }
+}
