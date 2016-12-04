@@ -1,21 +1,14 @@
-# Profile Component Coding Test
-Please code the attached design. Feel free to use any tools you feel necessary.
+# Flexbox Cards with Sidebar
+Simple responsive flexbox card layout with the ability to subscribe. Data is fetched via ajax from locally running api (Json Server). Uses plain javascript (ES6 with Babel), webpack, html and sass.
 
-## Requirements
-- Responsive & scaleable
-- Code the component as if it could be used multiple times on a single page.
-- Write your CSS in a way that would allow the content to grow or shrink if the content were to change.
-- Add an action of your choice with JS on click of the 'follow' button. We prefer vanilla JS.
+### Using it
 
-## What We're Looking For
-- High quality front end code. Simple, well written, organized, and clean code.
-- Strong attention to visual detail. (Hints: background color around the component, rounded corner radius, etc.).
-- We want to see your CSS skills. Please avoid Bootstrap and other CSS frameworks.
-- Use of modern web standards.
+First run `npm install` to download dependencies. Available npm scripts:
 
-### Bonus Points
-- Include build files (SASS/SCSS/LESS etc.).
-- If this challenge seems simple and you complete quickly, feel free to add extras to 'show off' something you're excited about.
+`npm start` concurrently launches the project in development mode on port 3100 and an api server (json server) on port 3000. Launches Chrome (if available) with browser-sync at http://localhost:3100.
 
-### Images
-If you do not have Photoshop or are unable to extract the cover photo and profile image, feel free to use your own graphics. Alternatively can also easily grab and image from http://placekitten.it or http://placedog.com/.
+`npm run api` launches just the api server on port 3000. You can then run the production app by loading dist/index.html in a browser.
+
+`npm run build` runs the build process and updates/creates the dist folder.
+
+`npm run seed` seeds the "database" in data/db.json with random data.
