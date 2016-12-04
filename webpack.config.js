@@ -90,7 +90,7 @@ var configuration = {
                 host: 'localhost',
                 port: 3100,
                 proxy: 'http://localhost:8080',
-                browser: 'chrome',
+                browser: process.platform === 'win32' ? 'chrome' : 'google chrome',
                 files: [
                     'app/**/*.html',
                     'app/**/*.js',
