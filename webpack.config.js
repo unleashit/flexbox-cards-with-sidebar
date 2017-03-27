@@ -39,7 +39,7 @@ var configuration = {
                 loader: ExtractTextPlugin.extract({
                     fallbackLoader: 'style-loader',
                     loader: 'css-loader?sourceMap!postcss-loader!sass-loader?sourceMap',
-                    includePaths: [path.resolve(__dirname, './app/scss')]
+                    // includePaths: [path.resolve(__dirname, './app/scss')]
                 })
             },
             {
@@ -78,12 +78,6 @@ var configuration = {
         new CopyWebpackPlugin([
             {context: './images', from: '*.jpg', to: 'images'},
         ]),
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            },
-            comments: false
-        }),
         new BrowserSyncPlugin(
             // BrowserSync options
             {
@@ -104,5 +98,14 @@ var configuration = {
         )
     ]
 };
+
+var uglify = new webpack.optimize.UglifyJsPlugin({
+    compress: {
+        warnings: false
+    },
+    comments: false
+});
+
+NODE_ENV === 'production' && configuration.plugins.push(uglify);
 
 module.exports = configuration;
