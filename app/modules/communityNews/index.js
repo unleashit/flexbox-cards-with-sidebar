@@ -19,7 +19,7 @@ let App = {
         axios(__API_URL__ + 'cards')
             .then(render.cards.bind(this, this.cardsContainer))
             .then(this.addCardListener.bind(this))
-            .catch(err => new Error(err));
+            .catch(err => console.error(err));
     },
 
     addCardListener() {
@@ -56,7 +56,7 @@ let App = {
                 window.scrollTo(0, 0);
                 })
             })
-            .catch(err => new Error(err));
+            .catch(err => console.error(err));
     },
 
     addCloseListeners() {
